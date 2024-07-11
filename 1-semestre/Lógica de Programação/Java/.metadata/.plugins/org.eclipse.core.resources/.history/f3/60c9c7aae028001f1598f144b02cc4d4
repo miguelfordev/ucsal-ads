@@ -1,0 +1,58 @@
+package provaIIunidade;
+import java.util.Scanner;
+public class questao3 {
+
+	public static void main(String[] args) {
+		/*c) Crie um programa que preencha uma matriz 3x3 com 9 nomes e, com base
+nessa matriz, crie uma nova matriz contendo o tamanho de cada string da
+matriz inicial. Em seguida, crie um vetor que armazene a soma dos tamanhos
+de cada linha da matriz que contém os tamanhos. (Valor 2,5).
+		 * 
+		 */
+			
+		iniciando();
+		
+	}
+
+	private static void iniciando() {
+		String[][] nomes = new String[3][3];
+		int[][] tamanhos_nomes = new int[3][3];
+		armazenandoMatriz(nomes, tamanhos_nomes);
+		mostrarMatriz(nomes);
+		mostrarMatrizInt(tamanhos_nomes);
+	}
+
+	private static void mostrarMatrizInt(int[][] tamanhos_nomes) {
+		for(int l=0;l<tamanhos_nomes.length;l++) {
+			for(int c=0;c<tamanhos_nomes.length;c++) {
+				System.out.print(tamanhos_nomes[l][c]+" ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+	private static void mostrarMatriz(String[][] nomes) {
+		System.out.print("== >>Matriz dos Nomes <<==");
+		for(int l=0;l<nomes.length;l++) {
+			for(int c=0;c<nomes.length;c++) {
+				System.out.print(nomes[l][c]+" | ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+	public static void armazenandoMatriz(String[][] nomes, int[][] tamanhos_nomes) {
+		String nome = new String();
+		for(int l=0;l<nomes.length;l++) {
+			for(int c=0;c<nomes.length;c++) {
+				System.out.print("Digite um nome: ");
+				nome = new Scanner(System.in).next();
+				nomes[l][c] = nome;
+				tamanhos_nomes[l][c] = nome.length();
+				}
+		}
+	}
+
+}

@@ -1,0 +1,27 @@
+package exaulas;
+import java.util.Scanner;
+public class questao_aula_07_06 {
+
+	public static void main(String[] args) {
+		/*Faça um programa que receba um nome e 
+		 * a) Alterne as letras em maiuscula e minuscula. o usuario deve informar se quer iniciar c/ maiuscula e minuscula
+		 * b) Mostre o indice da ultima letra e a ultima letra.
+		 * c) Substitua todas as vogais por "X"
+*/
+		System.out.print("Digite um nome: ");
+		String nome = new Scanner(System.in).next();
+		System.out.print("Começar com\n  1.Maiscula 2.Minuscula: ");
+		int resp = new Scanner(System.in).nextInt();
+		alternarNome(nome,resp);
+	}
+
+	public static void alternarNome(String nome, int resp) {
+		for(int i=0;i<nome.length();i++) {
+			if(resp==1) {
+				if(i%2==0) {
+					
+				}
+			}
+		}
+	}
+}

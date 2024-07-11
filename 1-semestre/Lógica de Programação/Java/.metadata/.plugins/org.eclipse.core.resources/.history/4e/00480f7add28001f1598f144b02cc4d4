@@ -1,0 +1,22 @@
+package provaIIunidade;
+
+public class questao2 {
+
+	public static void main(String[] args) {
+		/* b) Crie um programa que preencha um vetor com 5 nomes e outro vetor com 5
+		sobrenomes. Em seguida, combine esses dois vetores para criar um terceiro
+		vetor, onde cada elemento é uma concatenação do nome e sobrenome
+		correspondentes. (Valor 2,5)*/
+		
+		iniciando();
+
+	}
+
+	public static void iniciando() {
+		String[] nomes = new String[1];
+		String[] sobrenomes = new String[1];
+		String[] nomes_completos = new String[1];
+		
+	}
+
+}

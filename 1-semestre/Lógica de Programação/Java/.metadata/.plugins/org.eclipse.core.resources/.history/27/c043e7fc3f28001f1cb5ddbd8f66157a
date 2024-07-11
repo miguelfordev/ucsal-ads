@@ -1,0 +1,18 @@
+package questoes;
+import 
+public class ex12 {
+
+	public static void main(String[] args) {
+		/*12) Implemente um programa que preencha um vetor com 50 números inteiros e 
+classifique-os em ordem crescente.
+		 */
+		
+		int[] vetor = new int[50]; 
+		
+	}
+	
+	public static void preencherVetor(int[] vetor) {
+		
+	}
+
+}

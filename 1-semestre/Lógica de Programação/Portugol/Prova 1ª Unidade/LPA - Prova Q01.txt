@@ -1,0 +1,38 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro n1,n2,i
+
+		escreva("Digite o 1º número: ")
+		leia(n1)
+		escreva("Digite o 2º número: ")
+		leia(n2)
+		escreva("Do menor pro maior: ")
+		se(n1<n2){
+			para(i=n1;i<=n2;i++){
+				escreva(i," ")
+				}
+			} senao {
+				se(n1>n2){
+					para(i=n2;i<=n1;i++){
+						escreva(i," ")
+						}
+					}
+				}
+
+		escreva("\nDo maior pro menor: ")
+		se(n1>n2){
+			para(i=n1;i>=n2;i--){
+				escreva(i," ")
+				}
+			} senao {
+				se(n2>n1){
+					para(i=n2;i>=n1;i--){
+						escreva(i," ")
+						}
+					}
+				}
+	}
+}

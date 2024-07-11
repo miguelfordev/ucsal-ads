@@ -1,0 +1,40 @@
+package provaIIunidade;
+
+public class questao2 {
+
+	public static void main(String[] args) {
+		/* b) Crie um programa que preencha um vetor com 5 nomes e outro vetor com 5
+		sobrenomes. Em seguida, combine esses dois vetores para criar um terceiro
+		vetor, onde cada elemento é uma concatenação do nome e sobrenome
+		correspondentes. (Valor 2,5)*/
+		
+		iniciando();
+
+	}
+
+	public static void iniciando() {
+		String[] nomes = {"Ave","Nossa","Gloria","Jesus","Elton"};
+		String[] sobrenomes = {"Maria","Senhora","A Deus","Te ama","O melhor"};
+		String[] nomes_completos = {" "," "," "," "," "};
+		
+		juntandoVetor(nomes,sobrenomes,nomes_completos);
+		imprimindoVetor(nomes_completos);
+		
+	}
+	
+	public static void imprimindoVetor(String[] nomes_completos) {
+		for(int i=0;i<nomes_completos.length;i++) {
+			System.out.printf("%s ", nomes_completos[i]);
+			System.out.println();
+		}
+		
+	}
+
+	public static void juntandoVetor(String[] nomes, String[] sobrenomes, String[]nomes_completos) {
+		for(int i=0;i<nomes.length;i++) {
+			nomes_completos[i] = nomes[i]+" "+sobrenomes[i];
+		}
+		
+	}
+
+}

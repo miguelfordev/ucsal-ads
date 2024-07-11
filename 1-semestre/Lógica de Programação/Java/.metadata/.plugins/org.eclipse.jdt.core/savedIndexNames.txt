@@ -1,0 +1,7 @@
+INDEX VERSION 1.134+C:\Users\ThinkPad E14\Documents\UCSal - ADS\1º Semestre\Lógica de Programação\Java\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+90412941.index
+4037640741.index
+1295115870.index
+1067094681.index
+3279626763.index
