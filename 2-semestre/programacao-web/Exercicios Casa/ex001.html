@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags de Midias em HTML5 - EQUIPE 5</title>
+</head>
+<body>
+    <!--TAG HEADER = CABEÇALHO-->
+    <header>
+        <!--TAG H1 = TITULO-->
+        <h1>Exemplo de Tags de Mídia em HTML</h1>
+    </header>
+
+    <!--TAG MAIN = CONTEUDO PRINCIPAL DA PAGINA-->
+    <main>
+        <!--TAG SECTION = SEPARADOR DE CONTEUDO PRA OTIMIZAR O LAYOUT-->
+        <section>
+            <!--TAG H2 = TITULO/SUBTITULO-->
+            <h2>Imagem</h2>
+            <!--TAG IMG = ADICIONAR IMAGEM-->
+            <img src="https://via.placeholder.com/300" alt="Exemplo de Imagem">
+
+            <!--TAG P = PARAGRAFO-->
+            <p>Esta é uma imagem de exemplo. O atributo <code>alt</code> fornece uma descrição para a imagem.</p>
+            <p>O que é: A tag <`img`> é usada para inserir imagens na página.</p>
+            <p>
+                <!--TAG H4 = SUBTITULO-->
+                <h4>Atributos principais:</h4> 
+                <p><`src`>: Especifica o caminho do arquivo da imagem.</p>
+                <p><`alt`>: Fornece uma descrição alternativa para a imagem, importante para acessibilidade e SEO</p>
+            </p>
+
+            <p>
+                <h4>Como utilizar:</h4>
+                <`img src="caminho/para/imagem.jpg" alt="Descrição da imagem"`>
+            </p>
+
+            <p>
+                <h4>Por que usar:</h4>
+                Para adicionar gráficos, fotos ou qualquer outro tipo de imagem à página. A descrição alternativa é crucial para usuários com deficiência visual e para SEO.
+            </p>
+        </section>
+
+        <section>
+            <h2>Áudio</h2>
+
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+
+            <p>Este é um exemplo de clipe de áudio. Use o controle para reproduzir o áudio.</p>
+            <p>O que é: A tag <`audio`> é usada para incorporar arquivos de áudio na página.</p>
+            <p>
+                <h4>Atributos principais:</h4> 
+                <p>`controls`: Adiciona controles de reprodução (play, pause, volume) ao player de áudio.</p>
+                <p>src: Especifica o caminho do arquivo de áudio.</p>
+                <p>type: Informa o tipo MIME do arquivo de áudio.</p>
+            </p>
+        
+            <p>
+                <h4>Como utilizar:</h4>
+                    <`audio controls`>
+                    <`source src="caminho/para/audio.mp3" type="audio/mpeg"`>
+                    Seu navegador não suporta o elemento de áudio.
+                    <`/audio`>
+            </p>
+
+            <p>
+                <h4>Por que usar:</h4>
+                Para incluir clipes de áudio, como músicas ou efeitos sonoros. O atributo controls permite que os usuários reproduzam, pausem e ajustem o volume do áudio.
+            </p>
+        </section>
+
+        <section>
+            <h2>Vídeo</h2>
+
+            <video width="640" height="360" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+
+            <p>Este é um exemplo de clipe de vídeo. Use o controle para reproduzir o vídeo.</p>
+            <p>O que é: A tag <`video`> é usada para incorporar vídeos na página.</p>
+            <p>
+                <h4>Atributos principais:</h4> 
+                <p>width e height: Define as dimensões do vídeo.</p>
+                <p>controls: Adiciona controles de reprodução ao player de vídeo.</p>
+                <p>src: Especifica o caminho do arquivo de vídeo.</p>
+                <p>type: Informa o tipo MIME do arquivo de vídeo.</p>
+            </p>
+
+            <p>
+                <h4>Como utilizar:</h4>
+                <`video width="640" height="360" controls`>
+                <`source src="caminho/para/video.mp4" type="video/mp4"`>
+                Seu navegador não suporta o elemento de vídeo.
+                <`/video`>
+            </p>
+        
+            <p>
+                <h4>Por que usar:</h4>
+                Para incorporar clipes de vídeo, como tutoriais, trailers ou outros conteúdos visuais. O atributo controls permite que os usuários interajam com o vídeo.
+            </p>
+        </section>
+
+        <section>
+            <h2>Imagem com Legenda</h2>
+
+            <figure>
+                <img src="https://via.placeholder.com/300" alt="Exemplo de Imagem com Legenda">
+                <figcaption>Esta é a legenda para a imagem.</figcaption>
+            </figure>
+
+            <p>Usamos a tag <code>&lt;figure&gt;</code> para agrupar a imagem e a <code>&lt;figcaption&gt;</code> para adicionar uma legenda.</p>
+            <p>O que são: A tag <`figure> é usada para agrupar mídia (como imagens, vídeos) e sua descrição. A tag  <`figcaption> fornece uma legenda para o conteúdo da <`figure>.</p>
+        
+            <p>
+                <h4>Como utilizar:</h4>
+                <`figure>
+                    <`img src="caminho/para/imagem.jpg" alt="Descrição da imagem">
+                    <`figcaption>Esta é a legenda da imagem.</figcaption>
+                <`/figure>
+            </p>
+        
+            <p>
+                <h4>Por que usar:</h4>
+                Para fornecer contexto e descrição adicional para elementos de mídia, melhorando a acessibilidade e a compreensão do conteúdo.
+            </p>
+        </section>
+
+        <section>
+            <h2>Iframe</h2>
+
+            <iframe src="https://pt.wikipedia.org/wiki/P%C3%A1gina_principal" width="600" height="400" frameborder="0">
+                Seu navegador não suporta iframes.
+            </iframe>
+
+            <p>Este é um exemplo de um iframe incorporando uma página da web externa.</p>
+            <p>O que é: A tag <`iframe> permite incorporar outra página da web dentro da sua página.</p>
+            <p>
+                <h4>Atributos principais:</h4> 
+                <p>src: Especifica a URL da página a ser incorporada.</p>
+                <p>width e height: Define as dimensões do iframe.</p>
+                <p>frameborder: Remove a borda ao redor do iframe (0 remove a borda).</p>
+            </p>
+        
+            <p>
+                <h4>Como utilizar:</h4>
+                    <`iframe src="https://www.example.com" width="600" height="400" frameborder="0">
+                    Seu navegador não suporta iframes.
+                    <`/iframe>
+            </p>
+
+            <p>
+                <h4>Por que usar:</h4>
+                Para incluir conteúdo de outras páginas da web, como mapas, vídeos do YouTube ou widgets de redes sociais.
+            </p>
+        </section>
+
+        <section>
+            <!--TAG DIV = CAIXA/CONTAINER-->
+            <div>
+                <!--TAG UL = LISTA DESORDENADA-->
+                <ul>
+                    <!--TAG LI = ITEM DA LISTA-->
+                    <li>"ul" - lista denordenada</li>
+                    <li>"li" - item da lista</li>
+                </ul>
+                <!--TAG OL = LISTA ORDENADA-->
+                <ol>
+                    <li>"ol" - lista ordenada</li>
+                    <li>"li" - item da lista</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+    <!--TAG FOOTER = RODAPÉ DA PÁGINA-->
+    <footer>
+        <!--TAG &COPY; = SIMBOLO DO COPYRIGHT-->
+        <!--TAG A = LINK/REDIRECIONAMENTO-->
+        <a href="ex001.html">EQUIPE 5</a> - Todos os direitos reservados.&copy;
+    </footer>
+</body>
+</html>

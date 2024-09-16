@@ -1,0 +1,10 @@
+body{background-image: url(https://th.bing.com/th/id/OIP.A4fXRpPm2Y9L3fHy4-s--gHaHS?rs=1&pid=ImgDetMain);
+background-size: cover;
+}
+
+#a {
+    color: white;
+    z-index: 10000000000000000000000000000000000;
+    background-color: black;
+    text-align: center;
+}
