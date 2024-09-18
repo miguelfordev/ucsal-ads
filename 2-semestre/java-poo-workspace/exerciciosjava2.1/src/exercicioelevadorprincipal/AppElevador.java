@@ -1,5 +1,5 @@
 package exercicioelevadorprincipal;
-import exercicio;
+import exercicioelevador.Elevador;
 public class AppElevador {
 
 	public static void main(String[] args) {
