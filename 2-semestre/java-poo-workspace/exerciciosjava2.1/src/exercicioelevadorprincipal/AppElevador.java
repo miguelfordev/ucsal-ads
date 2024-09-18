@@ -1,9 +1,9 @@
 package exercicioelevadorprincipal;
-
+import exercicio;
 public class AppElevador {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Elevador el = new Elevador(3,5);
 
 	}
 
