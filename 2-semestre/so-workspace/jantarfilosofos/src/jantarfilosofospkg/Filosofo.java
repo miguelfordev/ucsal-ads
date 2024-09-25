@@ -1,51 +1,62 @@
 package jantarfilosofospkg;
 
-import java.util.concurrent.Semaphore; // Importa a classe Semaphore
+import java.util.concurrent.Semaphore;
 
-//Classe que representa um filósofo
-class Filosofo extends Thread {
-	private final Semaphore garfoEsquerdo; // Garfo à esquerda
-	private final Semaphore garfoDireito; // Garfo à direita
-	private final int id; // ID do filósofo
+class Filosofo implements Runnable {
+    private final int id;
+    private final Semaphore garfos;
+    private long tempoInicio; // Tempo de início da refeição
+    private long tempoFim; // Tempo de fim da refeição
+    private boolean comeu = false; // Flag para indicar se comeu
 
-	// Construtor do filósofo
-	public Filosofo(int id, Semaphore garfoEsquerdo, Semaphore garfoDireito) {
-		this.id = id; // Atribui o ID do filósofo
-		this.garfoEsquerdo = garfoEsquerdo; // Inicializa o garfo esquerdo
-		this.garfoDireito = garfoDireito; // Inicializa o garfo direito
-	}
+    public Filosofo(int id, Semaphore garfos) {
+        this.id = id;
+        this.garfos = garfos;
+    }
 
-	// Método que define o que a thread do filósofo fará
-	public void run() {
-		try {
-			while (true) { // Loop infinito para simular a vida do filósofo
-				pensar(); // O filósofo pensa
-				comer(); // O filósofo tenta comer
-			}
-		} catch (InterruptedException e) {
-			// Trata a interrupção da thread
-			Thread.currentThread().interrupt(); // Restaura o estado de interrupção
-		}
-	}
+    @Override
+    public void run() {
+        try {
+            pensar();
+            comer();
+        } catch (InterruptedException e) {
+            // Thread interrompida
+        }
+    }
 
-	// Simula o ato de pensar
-	private void pensar() throws InterruptedException {
-		System.out.println("Filósofo " + id + " está pensando."); // Imprime no terminal
-		Thread.sleep((int) (Math.random() * 1000)); // Espera aleatoriamente entre 0 e 1000 ms
-	}
+    private void pensar() throws InterruptedException {
+        long tempoPensar = (long) (Math.random() * 1000);
+        System.out.printf("Filósofo %d está pensando por %.2fs.%n", id, tempoPensar / 1000.0);
+        Thread.sleep(tempoPensar);
+    }
 
-	// Simula o ato de comer
-	private void comer() throws InterruptedException {
-		System.out.println("Filósofo " + id + " está tentando pegar os garfos...");
-		garfoEsquerdo.acquire(); // Tenta pegar o garfo esquerdo
-		System.out.println("Filósofo " + id + " pegou o garfo esquerdo."); // Imprime que pegou o garfo
-		garfoDireito.acquire(); // Tenta pegar o garfo direito
-		System.out.println("Filósofo " + id + " pegou o garfo direito."); // Imprime que pegou o garfo
-		System.out.println("Filósofo " + id + " está comendo."); // Imprime que está comendo
-		Thread.sleep((int) (Math.random() * 1000)); // Espera aleatoriamente entre 0 e 1000 ms
-		garfoEsquerdo.release(); // Libera o garfo esquerdo
-		System.out.println("Filósofo " + id + " liberou o garfo esquerdo."); // Imprime que liberou o garfo
-		garfoDireito.release(); // Libera o garfo direito
-		System.out.println("Filósofo " + id + " liberou o garfo direito."); // Imprime que liberou o garfo
-	}
+    private void comer() throws InterruptedException {
+        long tempoAguardando = System.currentTimeMillis();
+        System.out.printf("Filósofo %d está tentando pegar os garfos.%n", id);
+        garfos.acquire(2); // Adquire dois garfos
+        long tempoPegou = System.currentTimeMillis();
+        System.out.printf("Filósofo %d pegou os garfos em %.2fs.%n", id, (tempoPegou - tempoAguardando) / 1000.0);
+
+        try {
+            tempoInicio = System.currentTimeMillis();
+            long tempoComer = (long) (Math.random() * 1000);
+            System.out.printf("Filósofo %d começou a comer após %.2fs.%n", id, (tempoPegou - tempoAguardando) / 1000.0);
+            Thread.sleep(tempoComer);
+            tempoFim = System.currentTimeMillis();
+            System.out.printf("Filósofo %d terminou de comer em %.2fs.%n", id, (tempoFim - tempoAguardando) / 1000.0);
+            comeu = true; // Marca que o filósofo comeu
+        } finally {
+            garfos.release(2);
+            System.out.printf("Filósofo %d soltou os garfos.%n", id);
+        }
+    }
+
+    public String getMetricas(long tempoInicioExecucao) {
+        if (!comeu) return String.format("Filósofo %d: Não comeu.", id);
+        long duracaoComer = (tempoFim - tempoInicio);
+        return String.format("Filósofo %d: Início: %.2fs, Fim: %.2fs, Duração: %.2fs",
+                             id, (tempoInicio - tempoInicioExecucao) / 1000.0, 
+                             (tempoFim - tempoInicioExecucao) / 1000.0, 
+                             (duracaoComer / 1000.0));
+    }
 }
