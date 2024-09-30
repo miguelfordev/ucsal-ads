@@ -3,7 +3,7 @@ package jantarfilosofospkg;
 import java.util.concurrent.Semaphore;
 import java.util.Random;
 
-public class Teste {
+public class Sojantarfilosofo {
 
     // Número de filósofos
     private static final int N = 5;
