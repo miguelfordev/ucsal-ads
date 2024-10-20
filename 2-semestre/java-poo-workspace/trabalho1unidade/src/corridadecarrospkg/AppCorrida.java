@@ -4,24 +4,24 @@ public class AppCorrida {
 
 	public static void main(String[] args) {
 	
-		int distanciaMaxima = 10;
+		int distanciaMaxima = 50;
 		Carro c1 = new Carro();
 		Carro c2 = new Carro();
 		
 		
-		rua();
+		rua(distanciaMaxima);
 		System.out.println(c1.getCar());
-		tracado();
+		tracado(distanciaMaxima);
 		System.out.println(c2.getCar());
-		rua();
+		rua(distanciaMaxima);
 		do {
-			rua();
+			rua(distanciaMaxima);
 			c1.pegandoVelo(c1.geraVelo());
 			System.out.println(c1.getCar());
-			tracado();
+			tracado(distanciaMaxima);
 			c2.pegandoVelo(c2.geraVelo());
 			System.out.println(c2.getCar());
-			rua();	
+			rua(distanciaMaxima);	
 		}while(distanciaMaxima>c1.getDistancia() && distanciaMaxima>c2.getDistancia());
 		
 		if(c1.getDistancia()==distanciaMaxima && c2.getDistancia()==distanciaMaxima || c1.getDistancia()==c2.getDistancia()) {
@@ -39,16 +39,16 @@ public class AppCorrida {
 		
 	}
 	
-	public static void rua() {
-		for(int i=0;i<10;i++) {
+	public static void rua(int distanciaM) {
+		for(int i=0;i<distanciaM;i++) {
 			System.out.print("_");
 		}
 		System.out.print("P____");
 		System.out.println();
 	}
 	
-	public static void tracado() {
-		for(int i=0;i<5;i++) {
+	public static void tracado(int distanciaM) {
+		for(int i=0;i<distanciaM/2;i++) {
 			System.out.print(" -");
 		}
 		System.out.print(" - -");
