@@ -4,7 +4,7 @@ public class AppCorrida {
 
 	public static void main(String[] args) {
 	
-		int distanciaMaxima = 50;
+		int distanciaMaxima = 10;
 		Carro c1 = new Carro();
 		Carro c2 = new Carro();
 		

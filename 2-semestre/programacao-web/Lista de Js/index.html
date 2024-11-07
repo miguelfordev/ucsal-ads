@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+        <p>Programação FrontEnd</p>
+    </header>
+
+    <main class="principal">
+        <section class="caixa">
+            <h2>1. Imprimindo Mensagens no Console</h2>
+            <p>Escreva um programa que exiba a mensagem “Olá, Mundo!” no console do navegador.</p>
+            <button onclick="questao1()">Executar</button>
+            <p class="resultado" id="resultado1"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>2. Variáveis Simples</h2>
+            <p>Crie um programa que declare duas variáveis, nome e idade. Atribua valores a essas variáveis e,
+            em seguida, exiba uma frase no console usando essas variáveis.</p>
+            <button onclick="questao2()">Executar</button>
+            <p class="resultado" id="resultado2"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>3. Operações Matemáticas Simples</h2>
+            <p>Crie um programa que some, subtraia, multiplique e divida dois números. Exiba o resultado de
+            cada operação no console.</p>
+            <button onclick="questao3()">Executar</button>
+            <p class="resultado" id="resultado3"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>4. Calculando a Média</h2>
+            <p>Peça ao usuário para inserir três notas (usando prompt), calcule a média e exiba se o aluno foi
+            aprovado ou reprovado (a média para aprovação é 7).</p>
+            <button onclick="questao4()">Executar</button>
+            <p class="resultado" id="resultado4"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>5. Verificação de Par ou Ímpar</h2>
+            <p>Escreva um programa que peça ao usuário para inserir um número e verifique se ele é par ou
+            ímpar. Exiba o resultado no console.</p>
+            <button onclick="questao5()">Executar</button>
+            <p class="resultado" id="resultado5"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>6. Condicional Simples</h2>
+            <p>Crie um programa que peça ao usuário para inserir a idade e, dependendo da idade, exiba no
+            console se ele é maior ou menor de idade.</p>
+            <button onclick="questao6()">Executar</button>
+            <p class="resultado" id="resultado6"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>7. Calculadora com Função</h2>
+            <p>Crie uma função chamada calculadora que receba dois números e uma operação (soma,
+            subtração, multiplicação ou divisão) e retorne o resultado da operação. Exiba o resultado no
+            console.</p>
+            <button onclick="questao7()">Executar</button>
+            <p class="resultado" id="resultado7"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>8. Manipulação de Strings</h2>
+            <p>Crie um programa que solicite o nome do usuário e depois exiba no console o nome em letras
+            maiúsculas, em letras minúsculas e a quantidade de caracteres no nome.</p>
+            <button onclick="questao8()">Executar</button>
+            <p class="resultado" id="resultado8"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>9. Contagem Regressiva</h2>
+            <p>Escreva um programa que faça uma contagem regressiva de 10 até 1 usando um loop for e exiba
+            cada número no console.</p>
+            <button onclick="questao9()">Executar</button>
+            <p class="resultado" id="resultado9"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>10. Tabuada</h2>
+            <p>Peça ao usuário para inserir um número e exiba a tabuada desse número (do 1 ao 10) usando
+            um loop for.</p>
+            <button onclick="questao10()">Executar</button>
+            <p class="resultado" id="resultado10"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>11. Array de Nomes</h2>
+            <p>Crie um array com 5 nomes. Exiba cada nome no console utilizando um loop for ou forEach.</p>
+            <button onclick="questao11()">Executar</button>
+            <p class="resultado" id="resultado11"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>12. Conversão Celsius para Fahrenheit</h2>
+            <p>Crie uma função que converta graus Celsius em Fahrenheit. A fórmula de conversão é: F = C *
+            9/5 + 32. Teste a função e exiba o resultado no console.</p>
+            <button onclick="questao12()">Executar</button>
+            <p class="resultado" id="resultado12"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>13. Manipulação de Objetos</h2>
+            <p>Crie um objeto chamado carro com as propriedades marca, modelo e ano. Exiba cada uma das
+            propriedades no console.</p>
+            <button onclick="questao13()">Executar</button>
+            <p class="resultado" id="resultado13"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>14. Verificação de Maior Número</h2>
+            <p>Escreva uma função chamada maiorNumero que recebe dois números e retorna o maior deles.
+            Exiba o resultado no console.</p>
+            <button onclick="questao14()">Executar</button>
+            <p class="resultado" id="resultado14"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>15. Loop While</h2>
+            <p>Escreva um programa que conte de 1 até 10 usando um loop while e exiba cada número no
+            console.</p>
+            <button onclick="questao15()">Executar</button>
+            <p class="resultado" id="resultado15"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>16. Número Aleatório</h2>
+            <p>Crie um programa que gere um número aleatório entre 1 e 100 e peça ao usuário para adivinhar
+            o número. O programa deve continuar até que o usuário acerte, dando dicas se o número
+            inserido é maior ou menor que o número sorteado.</p>
+            <button onclick="questao16()">Executar</button>
+            <p class="resultado" id="resultado16"></p>
+        </section>
+
+        <section class="caixa">
+            <h2>17. Inverter uma String</h2>
+            <p>Crie uma função que receba uma string como parâmetro e retorne essa string ao contrário. Por
+            exemplo, ao receber "javascript", deve retornar "tpircsavaj".</p>
+            <button onclick="questao17()">Executar</button>
+            <p class="resultado" id="resultado17"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>UCSal - Todos os direitos reservados.&copy;</p>
+    </footer>
+
+    <script type="text/javascript" src="script.js"> </script>
+
+</body>
+</html>
