@@ -8,11 +8,11 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 
 		Item[] i = new Item[5];
-		i[0] = new Acessorio("Brinco", 50, 25, 50);
-		i[1] = new RoupaTamanhoUnico("Blusa Branca", 40, 20, 40);
-		i[2] = new RoupaPMG("Casaco Preto", 30, 25, 20, 15, 30);
-		i[3] = new RoupaPMG("Camisa Polo", 20, 15, 10, 5, 20);
-		i[4] = new RoupaPMG("Calça Jeans", 15, 12, 10, 5, 15);
+		i[0] = new Acessorio("Brinco", 7, 4, 10);
+		i[1] = new RoupaTamanhoUnico("Blusa Branca", 8, 5, 12);
+		i[2] = new RoupaPMG("Casaco Preto", 3, 7, 4, 2, 10);
+		i[3] = new RoupaPMG("Camisa Polo", 4, 8, 7, 2, 15);
+		i[4] = new RoupaPMG("Calça Jeans", 5, 8, 4, 3, 10);
 		menu(sc, i);
 
 	}
@@ -26,8 +26,12 @@ public class App {
 			}
 			System.out.print("5 - Sair do Sistema\n -> Opção desejada: ");
 			op = sc.nextInt();
-			if (op != 5) {
-				menuEscolha(op, i[op], sc);
+			try {
+				if (op != 5) {
+					menuEscolha(op, i[op], sc);
+				}				
+			} catch (Exception e){
+				System.out.println("Opção incorreta.");
 			}
 			limpaTela();
 		} while (op != 5);
@@ -63,8 +67,8 @@ public class App {
 	public static void mostraEstoque(int c, Item i) {
 		if (i instanceof RoupaPMG) {
 			System.out.printf(
-					"%d - %s / Quantidade em estoque Total: %d, P: %d, M: %d, G: %d / O estoque foi reabastecido: %d vez(es).", c,
-					i.getDescricao(), i.getQuantidade(),((RoupaPMG) i).getQuantidadeP(), ((RoupaPMG) i).getQuantidadeM(), ((RoupaPMG) i).getQuantidadeG(), i.getControleEstoque());
+					"%d - %s / Quantidade em estoque Total: %d, P: %d, M: %d, G: %d / O estoque Total foi reabastecido: %d vez(es). P: %d vez(es), M: %d vez(es), G: %d vez(es).", c,
+					i.getDescricao(), i.getQuantidade(),((RoupaPMG) i).getQuantidadeP(), ((RoupaPMG) i).getQuantidadeM(), ((RoupaPMG) i).getQuantidadeG(), i.getControleEstoque(), ((RoupaPMG) i).getControleEstoqueP(), ((RoupaPMG) i).getControleEstoqueM(), ((RoupaPMG) i).getControleEstoqueG());
 		} else {
 			System.out.printf("%d - %s / Quantidade em estoque: %d / O estoque foi reabastecido: %d vez(es).", c,
 					i.getDescricao(), i.getQuantidade(), i.getControleEstoque());		
