@@ -7,7 +7,7 @@ public class Acessorio extends Peca implements Item{
 	}
 	
 	public String venda(int itens_vendidos) {
-		if(itens_vendidos <= quantidade && quantidade >= estoqueMinimo && itens_vendidos >=0 || itens_vendidos >=0 && quantidade == itens_vendidos) {
+		if(itens_vendidos > 0 && itens_vendidos <= quantidade) {
 			quantidade -= itens_vendidos;
 			return "Venda concluida.";
 		} else {

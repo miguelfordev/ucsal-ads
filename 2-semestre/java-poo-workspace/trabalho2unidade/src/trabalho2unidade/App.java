@@ -32,14 +32,15 @@ public class App {
 				}				
 			} catch (Exception e){
 				System.out.println("Opção incorreta.");
+
 			}
-			limpaTela();
-		} while (op != 5);
-		System.out.println("->-> Produtos em Estoque <-<-");
-		for (int c = 0; c < i.length; c++) {
-			mostraEstoque(c, i[c]);
+			System.out.println("\n->-> Produtos em Estoque <-<-");
+			for (int c = 0; c < i.length; c++) {
+				mostraEstoque(c, i[c]);
+				System.out.println("");
+			}
 			System.out.println();
-		}
+		} while (op != 5);
 	}
 
 	public static void menuEscolha(int op, Item i, Scanner sc) {
@@ -72,12 +73,6 @@ public class App {
 		} else {
 			System.out.printf("%d - %s / Quantidade em estoque: %d / O estoque foi reabastecido: %d vez(es).", c,
 					i.getDescricao(), i.getQuantidade(), i.getControleEstoque());		
-		}
-	}
-
-	public static void limpaTela() {
-		for (int i = 0; i < 11; i++) {
-			System.out.println();
 		}
 	}
 

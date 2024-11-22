@@ -7,7 +7,7 @@ public class RoupaTamanhoUnico extends Peca implements Item{
 	}
 	
 	public String venda(int itens_vendidos) {
-		if(quantidade >= estoqueMinimo || quantidade == itens_vendidos) {
+		if(itens_vendidos > 0) {
 			quantidade -= itens_vendidos;
 			return "Venda concluida.";
 		} else {
