@@ -1,0 +1,1 @@
+select nome, genero, profissao from cliente order by nome desc;
