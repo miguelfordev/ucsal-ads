@@ -13,7 +13,7 @@ public class ex006_1 {
 
 	public double pesoIdeal() {
 		double pesoIdeal;
-		if(sexo.equals('F')) {
+		if(this.sexo.equals('F')) {
 			pesoIdeal = (62.1*altura)-44.7;
 			return pesoIdeal;
 		} else {
