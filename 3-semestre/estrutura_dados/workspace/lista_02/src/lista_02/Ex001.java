@@ -19,7 +19,11 @@ public class Ex001 {
 	}
 	
 	public static int CalculaMDC(int m, int n) {
-		return (n == 0) ? m : CalculaMDC(n, m % n);
+		if(n==0) {
+			return m;
+		} else {
+			return CalculaMDC(n,m%n);
+		}
 	}
 
 }
