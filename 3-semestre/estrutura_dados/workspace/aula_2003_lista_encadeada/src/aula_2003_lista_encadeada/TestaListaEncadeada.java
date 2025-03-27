@@ -21,11 +21,12 @@ public class TestaListaEncadeada {
 			System.out.println(listaEncadeada.getPosicaoAtual().getValor().getNome());
 		}
 
+		
 	}
 	
 	public void delContato(ListaEncadeada listaEncadeada) {
-		Contato contato9 = new Contato(9, "PEDRO", "pedro@ucsal.br");
-		listaEncadeada.remover(contato9);
+		Contato contato7 = new Contato(7, "VITOR", "vitor@ucsal.br");
+		listaEncadeada.remover(contato7);
 	}
 	
 	public void addContato(ListaEncadeada listaEncadeada) {
@@ -50,6 +51,7 @@ public class TestaListaEncadeada {
 		listaEncadeada.adicionar(contato7);//|DERIC||-->|DIEGO||-->|ISABEL||-->|ARTHUR||-->|MIGUEL||-->|ANDERSON||-->|VITOR||-->
 		listaEncadeada.adicionar(contato8);//|DERIC||-->|DIEGO||-->|ISABEL||-->|ARTHUR||-->|MIGUEL||-->|ANDERSON||-->|VITOR||-->|RODRIGO||-->
 		listaEncadeada.adicionar(contato9);//|DERIC||-->|DIEGO||-->|ISABEL||-->|ARTHUR||-->|MIGUEL||-->|ANDERSON||-->|VITOR||-->|RODRIGO||-->|PEDRO||-->
+		
 
 	}
 
