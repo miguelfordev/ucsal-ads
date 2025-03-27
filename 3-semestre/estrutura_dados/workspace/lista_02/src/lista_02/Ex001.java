@@ -15,14 +15,14 @@ public class Ex001 {
 		return m;
 		}*/
 
-		System.out.println(CalculaMDC(18,60));
+		System.out.println(calMDC(18,60));
 	}
 	
-	public static int CalculaMDC(int m, int n) {
+	public static int calMDC(int m, int n) {
 		if(n==0) {
 			return m;
 		} else {
-			return CalculaMDC(n,m%n);
+			return calMDC(n,m%n);
 		}
 	}
 
