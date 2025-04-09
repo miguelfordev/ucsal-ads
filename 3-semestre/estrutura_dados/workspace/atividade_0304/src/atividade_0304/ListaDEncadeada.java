@@ -47,7 +47,7 @@ public class ListaDEncadeada<T> {
 		} else {
 			aux.proximo = primeiro;
 			aux.anterior = null;
-			primeiro.anterior = aux;
+			primeiro.anterior = aux; 
 			primeiro = aux;
 		}
 		n++;
