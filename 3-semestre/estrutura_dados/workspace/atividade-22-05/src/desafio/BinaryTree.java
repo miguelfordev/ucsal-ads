@@ -116,11 +116,11 @@ public class BinaryTree<T> {
 		}
 		
 		if(T.getLeft() != null) {
-			printPreOrder(T.getLeft());
+			printInOrder(T.getLeft());
 		}
 		System.out.println("" + T.getValue()); // Em-ordem
 		if(T.getRight()!=null) {
-			printPreOrder(T.getRight());
+			printInOrder(T.getRight());
 		}
 		
 	}
@@ -131,11 +131,11 @@ public class BinaryTree<T> {
 		}
 		
 		if(T.getLeft() != null) {
-			printPreOrder(T.getLeft());
+			printPosOrder(T.getLeft());
 		}
 		
 		if(T.getRight()!=null) {
-			printPreOrder(T.getRight());
+			printPosOrder(T.getRight());
 		}
 		System.out.println("" + T.getValue()); // Pós-ordem
 	}
