@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Login {
-    public static void executar(Scanner scanner) {
+	public static void executar(Scanner scanner) {
         System.out.println("\n=== Login ===");
         System.out.print("Email: ");
         String email = scanner.nextLine();

@@ -149,10 +149,11 @@ public class Operacoes {
     public static void alterarDados(Scanner scanner, int idCliente) {
         
     	try (Connection conn = Conexao.conectar()) {
-            System.out.print("Novo nome: ");
+            System.out.println("Novo nome: ");
             String novoNome = scanner.nextLine();
+            
 
-            System.out.print("Novo CPF (somente números): ");
+            System.out.println("Novo CPF (somente números): ");
             String novoCpf = scanner.nextLine();
 
             String sqlCheck = "SELECT 1 FROM Cliente WHERE cpf = ? AND id_cliente <> ?";
@@ -181,6 +182,27 @@ public class Operacoes {
             System.out.println("Erro ao atualizar dados: " + e.getMessage());
         }
     }
+    
+    public static void excluirUsuario(int id) {
+    	try (Connection conn = Conexao.conectar()){
+    		 String call = "{ call remover_usuario(?) }"; 
+
+    	        CallableStatement cs = conn.prepareCall(call);
+    	        cs.setInt(1, id); 
+    	        cs.execute();
+
+    	        System.out.println("Seu usuário foi excluído!");
+			 
+    		conn.close();
+		} catch (SQLException e) { 
+            System.err.println("Erro ao excluir usuário: " + e.getMessage());
+            e.printStackTrace(); 
+        } catch (Exception e) { 
+            System.err.println("Ocorreu um erro inesperado: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
 
     public static void consultarSaldo(int idCliente) {
         
@@ -235,15 +257,16 @@ public class Operacoes {
     }
     
     public static void consultarClientesEContas() {
-        String sql = "SELECT c.nome, c.cpf, ct.id_conta, ct.tipo " +
-                     "FROM cliente c " +
-                     "JOIN conta ct ON c.id_cliente = ct.id_cliente";
+        String sql = "select * from vw_clientes_com_contas";
 
         try (Connection conn = Conexao.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
-
+        	
+        	boolean registroEncontrado = false;
+        	
             while (rs.next()) {
+            	registroEncontrado = true;
                 String nome = rs.getString("nome");
                 String cpf = rs.getString("cpf");
                 int numeroConta = rs.getInt("id_conta");
@@ -254,7 +277,10 @@ public class Operacoes {
                                    ", Conta: " + numeroConta +
                                    ", Tipo: " + tipoConta);
             }
-
+            if (!registroEncontrado) {
+	            System.out.println("Não tem nenhum registro.");
+	        }	
+            
         } catch (SQLException e) {
             System.out.println("Erro ao consultar: " + e.getMessage());
         }
@@ -290,4 +316,3 @@ public class Operacoes {
         return saldo;
     }
 }
-

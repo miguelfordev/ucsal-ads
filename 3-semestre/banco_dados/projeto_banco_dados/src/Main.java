@@ -17,7 +17,8 @@ public class Main {
             System.out.println("4 - Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-
+            scanner.nextLine();
+            
             switch (opcao) {
                 case 1:
                     CriarConta.executar(scanner);
